@@ -35,6 +35,16 @@ Tab:Button{
 }
 
 Tab:Button{
+	Name = "Super Duper Bullets",
+	Description = "Even Fuckin Better.",
+	Callback = function()
+	    local Gun = require(game:GetService("Workspace").Floppilam.M4A1["ACS_Modulo"].Variaveis.Settings)
+        Gun.Bullets = 100
+        Gun.MinSpread = 100
+    end
+}
+
+Tab:Button{
 	Name = "Unlimited Ammo",
 	Description = "Reload Weapon to work",
 	Callback = function()
@@ -69,16 +79,6 @@ Tab:Button{
 	Callback = function()
 	local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
     Gun.FireRate = 4000
-    end
-}
-
-Tab:Button{
-	Name = "Explosive Bullets",
-	Description = "Not work :sad:",
-	Callback = function()
-	local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
-    Gun.LauncherReady = true
-    Gun.ExplosiveHit = true
     end
 }
 
