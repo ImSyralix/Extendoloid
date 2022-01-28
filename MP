@@ -109,3 +109,10 @@ Tab3:Button{
     end
 }
 
+Tab3:Button{
+	Name = "Spoof Ranked",
+	Description = "Why does this work??? idk",
+	Callback = function()
+    game:GetService("ReplicatedStorage").GameSystemData.GameMode.Value = "Ranked"
+    end
+}
