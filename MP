@@ -1,0 +1,111 @@
+Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+
+local GUI = Mercury:Create{
+    Name = "Syralix's Priv",
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Dark,
+    Link = "https://www.roblox.com/users/3230671550/profile"
+}
+
+local Tab = GUI:Tab{
+	Name = "Weapon",
+	Icon = "rbxassetid://8657204455"
+}
+
+local Tab2 = GUI:Tab{
+	Name = "ESP",
+	Icon = "rbxassetid://8657205175"
+}
+
+local Tab3 = GUI:Tab{
+	Name = "Misc",
+	Icon = "rbxassetid://8657205175"
+}
+
+
+
+Tab:Button{
+	Name = "SuperBullets",
+	Description = "Must switch to secondary and back to work.",
+	Callback = function()
+	    local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
+        Gun.Bullets = 30
+        Gun.MinSpread = 30
+    end
+}
+
+Tab:Button{
+	Name = "Unlimited Ammo",
+	Description = "Reload Weapon to work",
+	Callback = function()
+	    local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
+        Gun.Ammo = 999999999
+    end
+}
+
+Tab:Button{
+	Name = "Remove Recoil",
+	Description = "Must switch to secondary and back to work.",
+	Callback = function()
+	    local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
+        Gun.MaxSway = 0
+        Gun.VRecoil = { 0, 0 }
+        Gun.HRecoil = { 0, 0 }
+    end
+}
+
+Tab:Button{
+	Name = "Remove Spread",
+	Description = "Must switch to secondary and back to work.",
+	Callback = function()
+	    local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
+        Gun.MaxSpread = 0
+    end
+}
+
+Tab:Button{
+	Name = "Rapid Fire",
+	Description = "Must switch to secondary and back to work.",
+	Callback = function()
+	local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
+    Gun.FireRate = 4000
+    end
+}
+
+Tab:Button{
+	Name = "Explosive Bullets",
+	Description = "Not work :sad:",
+	Callback = function()
+	local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
+    Gun.LauncherReady = true
+    Gun.ExplosiveHit = true
+    end
+}
+
+Tab:Button{
+	Name = "No FOV Reduction",
+	Description = "why u ",
+	Callback = function()
+	local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
+    Gun.GunFOVReduction = 0
+    end
+}
+
+
+Tab2:Button{
+	Name = "Draw Skeleton",
+	Description = nil,
+	Callback = function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/dPtdurev'),true))()
+    end
+}
+
+Tab3:Button{
+	Name = "Insta Prone",
+	Description = "why u ",
+	Callback = function()
+    local cummer = require(game:GetService("ReplicatedStorage").Engine.ServerConfigs.Config)
+    cummer.ProneRecover = 0
+    end
+}
+
