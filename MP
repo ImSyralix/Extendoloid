@@ -1,7 +1,7 @@
 Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
-    Name = "Syralix's Priv",
+    Name = "MP40_Extendo Priv",
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Dark,
     Link = "https://www.roblox.com/users/3230671550/profile"
@@ -19,9 +19,8 @@ local Tab2 = GUI:Tab{
 
 local Tab3 = GUI:Tab{
 	Name = "Misc",
-	Icon = "rbxassetid://8657205175"
+	Icon = "rbxassetid://8688292463"
 }
-
 
 
 Tab:Button{
@@ -38,11 +37,23 @@ Tab:Button{
 	Name = "Super Duper Bullets",
 	Description = "Even Fuckin Better.",
 	Callback = function()
-	    local Gun = require(game:GetService("Workspace").Floppilam.M4A1["ACS_Modulo"].Variaveis.Settings)
+	    local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
         Gun.Bullets = 100
         Gun.MinSpread = 100
     end
 }
+
+Tab:Button{
+	Name = "One Shot Kill",
+	Description = "Hey guys! Watch this onetap!",
+	Callback = function()
+	    local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
+        Gun.HeadDamage = { 100, 100 }
+        Gun.LimbsDamage = { 100, 100 }
+        Gun.TorsoDamage = { 100, 100 }
+    end
+}
+
 
 Tab:Button{
 	Name = "Unlimited Ammo",
@@ -82,15 +93,6 @@ Tab:Button{
     end
 }
 
-Tab:Button{
-	Name = "No FOV Reduction",
-	Description = "why u ",
-	Callback = function()
-	local Gun = require(game:GetService("Workspace").MP40_Extendo.M4A1["ACS_Modulo"].Variaveis.Settings)
-    Gun.GunFOVReduction = 0
-    end
-}
-
 
 Tab2:Button{
 	Name = "Draw Skeleton",
@@ -100,9 +102,17 @@ Tab2:Button{
     end
 }
 
+Tab2:Button{
+	Name = "Remove Barricade",
+	Description = "Client Sided",
+	Callback = function()
+        game:GetService("Workspace").Map["Gas Station"]["Object_Doors"]:Destroy()
+    end
+}
+
 Tab3:Button{
 	Name = "Insta Prone",
-	Description = "why u ",
+	Description = "why u",
 	Callback = function()
     local cummer = require(game:GetService("ReplicatedStorage").Engine.ServerConfigs.Config)
     cummer.ProneRecover = 0
@@ -110,9 +120,32 @@ Tab3:Button{
 }
 
 Tab3:Button{
+	Name = "Jump Cooldown",
+	Description = "why u v2",
+	Callback = function()
+    local cummer = require(game:GetService("ReplicatedStorage").Engine.ServerConfigs.Config)
+    cummer.JumpCoolDown = 0
+    end
+}
+
+Tab3:Button{
 	Name = "Spoof Ranked",
-	Description = "Why does this work??? idk",
+	Description = "Why would you even do this",
 	Callback = function()
     game:GetService("ReplicatedStorage").GameSystemData.GameMode.Value = "Ranked"
     end
 }
+
+Tab3:Button{
+	Name = "TP To Objective",
+	Description = "Dubs all day",
+	Callback = function()
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Map_Cache"].Objective.Case.CFrame
+    end
+}
+
+
+
+
+
+
